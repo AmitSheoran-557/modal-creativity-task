@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+ 
+ 
+.modal-open:checked~.modal {
+    display: block;
+}
+
+.modal-open:checked~.modal .modal-overlay {
+    display: block;
+}
+
+.modal-content-2 {
+    left: 100%;
+}
+
+.modal-content-3 {
+    left: 200%;
+}
+
+#modal-content-1:checked~.content-1 {
+    left: 0;
+    overflow: auto;
+    position: relative;
+}
+
+#modal-content-1:checked~.content-2 {
+    left: 100%;
+}
+
+#modal-content-2:checked~.content-1 {
+    left: -100%;
+}
+
+#modal-content-2:checked~.content-2 {
+    left: 0;
+    overflow: auto;
+    position: relative;
+}
+
+#modal-content-2:checked~.content-3 {
+    left: 100%;
+}
+
+#modal-content-3:checked~.content-1 {
+    left: -200%;
+}
+
+#modal-content-3:checked~.content-2 {
+    left: -100%;
+}
+
+#modal-content-3:checked~.content-3 {
+    left: 0;
+    overflow: auto;
+    position: relative;
+}
+ 
