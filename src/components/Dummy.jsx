@@ -48,7 +48,6 @@ const Dummy = () => {
                 <div className="relative my-8 mx-4 py-12">
                   <h2 className="lg:text-3xl text-2xl lg:mb-4 mb-3">{slide.title}</h2>
                   <p className="text-left lg:text-base text-sm">{slide.content}</p>
-
                   <div className="absolute top-[50px] w-full">
                     {slide.prevLabel && (
                       <label htmlFor={slide.prevTarget} className="content-[''] left-0 -top-14 absolute bg-[#f7f7f7] text-[#303030] cursor-pointer inline-block text-[50px] leading-[45px] h-[50px] w-[80px] px-[25px] py-0 text-center align-middle -tracking-[7px]">

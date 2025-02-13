@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
- 
- 
+
+
 .modal-open:checked~.modal {
     display: block;
 }
@@ -55,4 +55,14 @@
     overflow: auto;
     position: relative;
 }
- 
+
+/* ========================================= */
+ul li {
+    transition: transform 1s cubic-bezier(0.68, 2.55, 0.27, 1.55), opacity 0.3s ease;
+    list-style: disc;
+}
+
+ul:hover li:not(:hover) {
+    opacity: 0.25;
+    transform: scale(0.8);
+}
