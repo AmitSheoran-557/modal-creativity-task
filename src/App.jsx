@@ -28,7 +28,6 @@ function App() {
         <Route path="/image" element={<UploadImage />} />
         <Route path="/input" element={<CustomEmailError />} />
         <Route path="/" exact element={<CreativeHover />} />
-        <Route path="/dummy" exact element={<Dummy />} />
       </Routes>
     </>
   )
