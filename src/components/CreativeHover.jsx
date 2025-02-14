@@ -14,7 +14,6 @@ const CreativeHover = () => {
                 <li>Metformin</li>
                 <li>Loratadine</li>
                 <li>Omeprazole</li>
-
             </ul>
         </div>
     )
