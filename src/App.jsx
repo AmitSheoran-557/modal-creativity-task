@@ -1,10 +1,10 @@
 import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Dummy from './components/Dummy'
 import FormValidation from './components/FormValidation'
 import Gsap from './components/Gsap'
 import ParamsPractice from './components/ParamsPractice'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LocalStorageTwo from './components/LocalStorageTwo'
 import Calendly from './components/Calendly'
 import ParamPractice2 from './components/ParamPractice2'
@@ -34,5 +34,5 @@ function App() {
     </>
   )
 }
-
+ 
 export default App
