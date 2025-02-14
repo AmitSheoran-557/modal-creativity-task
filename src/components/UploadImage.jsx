@@ -5,7 +5,18 @@ const UploadImage = () => {
 
     const handleFiles = (e) => {
         const files = e.target.files;
-        const fileArr = Array.from(files).map((file) => ({url: URL.createObjectURL(file), }));
+        const fileArr = [];
+
+        Array.from(files).map((file) => {
+            if (file.type.startsWith("image/")) {
+                fileArr.push({
+                    url: URL.createObjectURL(file),
+                });
+            } else {
+                alert("Please upload a valid image file.");
+            }
+        });
+
         setImages((prevImages) => [...prevImages, ...fileArr]);
     };
 
@@ -17,7 +28,7 @@ const UploadImage = () => {
             <input type="file" multiple onChange={handleFiles} id='image' hidden />
             <div>
                 {images.map((item, index) => (
-                    <img className='max-w-80' key={index} src={item.url} alt={`selected-img-${index}`}   />
+                    <img className='max-w-80' key={index} src={item.url} alt={`selected-img-${index}`} />
                 ))}
             </div>
         </div>

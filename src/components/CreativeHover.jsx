@@ -6,9 +6,8 @@ const CreativeHover = () => {
     }, []);
     return (
         <div className='flex justify-center flex-col items-center min-h-screen bg-black text-white'>
-
-            <h2 className='text-center lg:text-5xl text-4xl lg:mb-7 mb-5'>Hover Effect Creativity</h2>
-            <ul className='lg:text-4xl text-3xl mx-auto gap-1 flex flex-col font-light list-none p-0'>
+            <h2 className='text-center lg:text-5xl md:text-4xl text-3xl lg:mb-7 mb-5'>Hover Effect Creativity</h2>
+            <ul className='lg:text-4xl md:text-3xl text-2xl mx-auto gap-1 flex flex-col font-light list-none p-0'>
                 <li>Paracetamol</li>
                 <li>Ibuprofen</li>
                 <li>Amoxicillin</li>

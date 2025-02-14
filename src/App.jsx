@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Dummy from './components/Dummy'
 import FormValidation from './components/FormValidation'
@@ -16,23 +16,22 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/dummy" element={<Dummy />} />
-          <Route path="/form" element={<FormValidation />} />
-          <Route path="/gsap" element={<Gsap />} />
-          <Route path="/param/:paramId" element={<ParamsPractice />} />
-          <Route path="/tabs" element={<ParamPractice2 />} />
-          <Route path="/tabs/:tabId" element={<ParamPractice2 />} />
-          <Route path="/local" element={<LocalStorageTwo />} />
-          <Route path="/cal" element={<Calendly />} />
-          <Route path="/image" element={<UploadImage />} />
-          <Route path="/input" element={<CustomEmailError/>} />
-          <Route path="/hover" element={<CreativeHover/>} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/dummy" element={<Dummy />} />
+        <Route path="/form" element={<FormValidation />} />
+        <Route path="/gsap" element={<Gsap />} />
+        <Route path="/param/:paramId" element={<ParamsPractice />} />
+        <Route path="/tabs" element={<ParamPractice2 />} />
+        <Route path="/tabs/:tabId" element={<ParamPractice2 />} />
+        <Route path="/local" element={<LocalStorageTwo />} />
+        <Route path="/cal" element={<Calendly />} />
+        <Route path="/image" element={<UploadImage />} />
+        <Route path="/input" element={<CustomEmailError />} />
+        <Route path="/" exact element={<CreativeHover />} />
+        <Route path="/dummy" exact element={<Dummy />} />
+      </Routes>
     </>
   )
 }
- 
+
 export default App
