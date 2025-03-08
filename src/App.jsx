@@ -11,6 +11,7 @@ import ParamPractice2 from './components/ParamPractice2'
 import UploadImage from './components/UploadImage'
 import CustomEmailError from './components/CustomEmailError'
 import CreativeHover from './components/CreativeHover'
+import AgeCalculator from './components/AgeCalculator'
 
 function App() {
 
@@ -27,8 +28,9 @@ function App() {
         <Route path="/cal" element={<Calendly />} />
         <Route path="/image" element={<UploadImage />} />
         <Route path="/input" element={<CustomEmailError />} />
-        <Route path="/" exact element={<CreativeHover />} />
-      </Routes>
+        <Route path="/hover" exact element={<CreativeHover />} />
+        <Route path="/age" exact element={<AgeCalculator />} />
+         </Routes>
     </>
   )
 }
