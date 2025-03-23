@@ -1,43 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { Link, Router, useParams, useSearchParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, Router, useParams } from 'react-router-dom';
 
 const ParamsPractice = () => {
-    const [activeTab, setActiveTab] = useState('tab1');
 
     const { paramId } = useParams()
-
-    const handleClick = (tab) => {
-        setActiveTab(tab);
-    };
+    const tabs = [
+        { id: 'tab1', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, fugit adipisci aut nesciunt dolores rem provident ad animi temporibus itaque!' },
+        { id: 'tab2', content: 'Lorem ipsum dolor sit.' },
+        { id: 'tab3', content: 'Lorem ipsum dolor sit ipsum dolor sit.' },
+    ];
 
     return (
         <div className='py-20 bg-black min-h-screen'>
-            <ul className='flex bg-black text-white max-w-xl w-full mx-auto justify-center items-center gap-40'>
-                <Link to={() => Router.push('/param/tab1')} className={`bg-white rounded text-3xl text-black px-4 cursor-pointer`}>
-                    tab1
-                </Link>
-                <li onClick={() => handleClick('tab2')} className={`bg-white rounded text-3xl text-black px-4 cursor-pointer`}>
-                    tab2
-                </li>
-                <li onClick={() => handleClick('tab3')} className={`bg-white rounded text-3xl text-black px-4 cursor-pointer`}>
-                    tab3
-                </li>
-            </ul>
+            <div className="flex gap-3 max-w-xl mx-auto">
+                <Link className='text-black bg-white px-10 text-2xl py-1 flex justify-center flex-col items-center max-w-max mb-1 mx-auto' to="/param/tab1">Tab 1</Link>
+                <Link className='text-black bg-white px-10 text-2xl py-1 flex justify-center flex-col items-center max-w-max mb-1 mx-auto' to="/param/tab2">Tab 2</Link>
+                <Link className='text-black bg-white px-10 text-2xl py-1 flex justify-center flex-col items-center max-w-max mb-1 mx-auto' to="/param/tab3">Tab 3</Link>
+            </div>
+
             <div className="flex bg-black text-white max-w-xl w-full mx-auto justify-center items-center gap-40 pt-10">
-                <div className={`${activeTab === 'tab1' ? '' : 'hidden'} text-xl`}>
-                    <h1>tab1</h1>
-                    <p>tab1 content</p>
-                </div>
-                <div className={`${activeTab === 'tab2' ? '' : 'hidden'} text-xl`}>
-                    <h1>tab2</h1>
-                    <p>tab2 content</p>
-                    <p>tab2 reiugywui euirhnc ernd</p>
-                </div>
-                <div className={`${activeTab === 'tab3' ? '' : 'hidden'} text-xl`}>
-                    <h1>tab3</h1>
-                    <p>tab3 content</p>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
+                {tabs.map(tab => (
+                    tab.id === paramId && <div className='max-w-xs mt-3 min-w-xs text-white' key={tab.id}>{tab.content}</div>
+                ))}
             </div>
         </div>
     );

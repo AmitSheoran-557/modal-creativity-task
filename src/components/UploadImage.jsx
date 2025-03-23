@@ -4,24 +4,19 @@ const UploadImage = () => {
     const [images, setImages] = useState([]);
 
     const handleFiles = (e) => {
-        const files = e.target.files;
-        const fileArr = [];
-
-        Array.from(files).map((file) => {
-            if (file.type.startsWith("image/")) {
-                fileArr.push({
+        e.preventDefault();
+        const files = e.target.files || e.dataTransfer.files;
+        const fileArr =
+            Array.from(files).filter(file =>
+                file.type.startsWith("image/")).map(file => ({
                     url: URL.createObjectURL(file),
-                });
-            } else {
-                alert("Please upload a valid image file.");
-            }
-        });
-
-        setImages((prevImages) => [...prevImages, ...fileArr]);
+                }));
+        setImages(prevImages => [...prevImages, ...fileArr]);
+        e.target.value = null;
     };
 
     return (
-        <div className='bg-black py-20 text-white'>
+        <div className='bg-black py-20 min-h-screen text-white' onDrop={handleFiles} onDragOver={(e) => e.preventDefault()}  >
             <label htmlFor="image" className='bg-black text-white cursor-pointer text-4xl'>
                 upload now
             </label>
